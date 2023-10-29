@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    background: #727272;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    background: #FFF;
+}
+
+.popup-image {
+    display: flex;
+    min-width: 447px;
+}
+
+.popup-info {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.popup-title {
+    margin: 0;
+    color: #170F49;
+    font-family: Lato;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.popup-text {
+    color:#6F6C90;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+}
+
+.popup-input {
+    outline: none;
+    padding: 0 16px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid var(--gray-200, #EAECF0);
+    background: var(--base-white, #FFF);
+    box-shadow: 0px 1px 2px 0px rgba(16,24,40,0.05);
+    color: #697586;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.button-assign {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2D714F;
+    color: #FFF;
+    text-align: center;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    border: none;
+    cursor: pointer;
+}
+
+.popup-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.form-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.popup-checkbox-text {
+    color: #1D2939;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+}
+
+.close-popup {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 780px) {
+    @media (max-width: 1080px) {
+       .popup-overlay {
+            width:100vw;
+            height: 100vh
+        }
+    
+       .popup-container {
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 32px);
+            max-width: fit-content
+        }
+    
+       .popup-image {
+            display: none
+        }
+    
+       .popup-info {
+            padding: 48px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px
+        }
+    
+        .popup-title {
+            text-align: center;
+            font-size: 16px
+        }
+    
+        .popup-text {
+            text-align: center;
+            font-size: 12px
+        }
+    
+        .popup-checkbox-text {
+            font-size: 14px
+        }
+    }
+}
