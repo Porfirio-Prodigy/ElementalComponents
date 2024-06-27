@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Progress Bars</title>
+    <style>
+        /* General style for the progress element */
+        progress {
+            width: 100%; /* Sets the width of the progress bar */
+            height: 30px; /* Sets the height of the progress bar */
+            -webkit-appearance: none; /* Removes the default WebKit appearance */
+            appearance: none; /* Removes the default appearance for all browsers */
+            margin-bottom: 10px; /* Adds space between the bars */
+        }
+
+        /* Specific style for WebKit browsers (Chrome, Safari) */
+        progress::-webkit-progress-bar {
+            background-color: #f3f3f3; /* Sets the background color of the progress bar */
+            border-radius: 10px; /* Sets rounded borders for the progress bar */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset; /* Adds an inset shadow */
+        }
+
+        progress::-webkit-progress-value {
+            background-color: #4caf50; /* Sets the background color of the filled portion */
+            border-radius: 10px 0 0 10px; /* Sets rounded borders for the filled portion */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset; /* Adds an inset shadow */
+        }
+
+        /* Specific style for Mozilla browsers (Firefox) */
+        progress::-moz-progress-bar {
+            background-color: #4caf50; /* Sets the background color of the filled portion */
+            border-radius: 10px; /* Sets rounded borders for the filled portion */
+        }
+
+        /* Specific style for Internet Explorer browsers */
+        progress::-ms-fill {
+            background-color: #4caf50; /* Sets the background color of the filled portion */
+            border-radius: 10px; /* Sets rounded borders for the filled portion */
+        }
+    </style>
+</head>
+<body>
+    <progress id="progress-bar-1" value="70" max="100">70 %</progress>
+    <progress id="progress-bar-2" value="0" max="100">0 %</progress>
+    <button onclick="setProgress(1, 50)">Update Bar 1 to 50%</button>
+
+    <script>
+
+        function setProgress(barNumber, value) {
+            const progressBar = document.getElementById(`progress-bar-${barNumber}`);
+            if (progressBar) {
+                progressBar.value = value; // Updates the progress bar value
+                progressBar.innerText = `${value} %`; // Sets the inner text to the percentage value
+            }
+        }
+            
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBar2 = document.getElementById('progress-bar-2');
+            
+            function setProgress(barNumber, value) {
+                const progressBar = document.getElementById(`progress-bar-${barNumber}`);
+                if (progressBar) {
+                    progressBar.value = value; // Updates the progress bar value
+                    progressBar.innerText = `${value} %`; // Sets the inner text to the percentage value
+                }
+            }
+            
+            let progressValue2 = 0;
+            setInterval(() => {
+                if (progressValue2 < 100) {
+                    progressValue2++;
+                    setProgress(2, progressValue2);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
